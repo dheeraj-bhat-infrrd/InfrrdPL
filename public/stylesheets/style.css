@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+nav{
+  box-shadow: 4px 4.5px 5px #888888;
+}
+.navbar-brand{
+  padding: 0px;
+}
+
+.right-margin{
+  margin-right: 10px;
+}
+
+.navLinks ul li{
+  margin: 0 5px;
+}
+
+.dropdown-menu{
+  background-color: #0f0f0f;
+}
+
+.dropdown-menu li a:hover{
+  background-color: #222222 ;
+  color: #9acfea;
+}
+.dropdown-menu li a{
+  color:#999999;
+}
+
+.logoStyle{
+  margin-top: 35px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
