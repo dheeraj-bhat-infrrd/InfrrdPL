@@ -39,3 +39,14 @@ nav{
   margin-left: 10%;
   margin-right: 10%;
 }
+
+.container .jumbotron{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.submitButton{
+  width:540px;
+  margin-right: 26%;
+  margin-left: 26.5%;
+}

@@ -6,7 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
 var index = require('./routes/index');
-
+var register = require('./routes/register');
+var expressValidator =  require('express-validator');
+var expressSession = require('express-session');
 var app = express();
 
 // view engine setup
@@ -19,12 +21,14 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
+app.use(expressSession({secret: 'max', saveUninitialized: false, resave: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
 app.use('/', index);
-
+app.use('/register',register)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
