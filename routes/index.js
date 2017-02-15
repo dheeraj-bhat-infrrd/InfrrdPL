@@ -22,29 +22,8 @@ router.get('/login',function (req,res,next) {
 });
 
 router.get('/register',function (req,res,next) {
-    res.render('register',{ title: 'Registration Page' });
+    res.render('register',{ layout:'regLayout.hbs',title: 'Registration Page' });
 });
 
-router.post('/submit',function(req,res,next){
-    req.check('email','Invalid Email').isEmail();
-    req.check('password','Password is invalid').isLength({min:4}).equals(req.body.confirmPassword);
 
-    var errors =  req.validationErrors();
-    if(errors) {
-        req.session.errors =  errors;
-        req.session.success =false;
-    }
-    else{
-        var item = {
-            title: req.body.email,
-            password: req.body.password
-        };
-
-        var data = new userData(item);
-        data.save();
-        req.session.success = true;
-    }
-    res.redirect('/');
-
-});
 module.exports = router;

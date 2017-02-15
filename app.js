@@ -6,9 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
 var index = require('./routes/index');
-var register = require('./routes/register');
+var register = require('./public/javascripts/register');
+var angular = require('./bower_components/angular/angular');
 var expressValidator =  require('express-validator');
 var expressSession = require('express-session');
+
 var app = express();
 
 // view engine setup
